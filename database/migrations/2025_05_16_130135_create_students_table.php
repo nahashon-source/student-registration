@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table ->string('name');
+            $table ->string('email') -> unique();
+            $table ->string('course');
+            $table ->string('registration_number') -> unique();
+            $table->timestamps(); // created_at and updated_at
         });
     }
 
